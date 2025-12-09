@@ -49,8 +49,7 @@ export default function BlogsPage() {
           Blogs
         </h1>
         <p className="max-w-2xl text-sm text-muted-foreground sm:text-[15px]">
-          Occasional notes on projects, performance, and how I approach building reliable web
-          applications.
+          A space where I write about my learnings, experiences, and the things that inspire me — from tech and personal growth to nature and everyday life.
         </p>
       </div>
 
