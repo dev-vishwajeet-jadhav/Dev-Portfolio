@@ -87,12 +87,12 @@ export function Projects() {
                     Live Demo
                   </a>
                 )}
-                <Link
-                  href={`/projects/${project.slug}`}
+                <button
+                  type="button"
                   className="hover:text-foreground focus-visible:ring-focus-visible rounded-full px-1"
                 >
                   View Case Study →
-                </Link>
+                </button>
               </div>
             </div>
           </motion.article>
