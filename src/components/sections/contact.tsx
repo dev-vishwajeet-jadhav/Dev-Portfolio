@@ -4,14 +4,45 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 export function Contact() {
-  const [status, setStatus] = useState<"idle" | "success">("idle");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.currentTarget;
     if (!form.checkValidity()) return;
-    setStatus("success");
-    form.reset();
+
+    const formData = new FormData(form);
+    const name = formData.get("name") as string;
+    const email = formData.get("email") as string;
+    const message = formData.get("message") as string;
+
+    setStatus("loading");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, message }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Request failed");
+      }
+
+      const data = await response.json();
+
+      if (!data.success) {
+        throw new Error(data.error || "Failed to send");
+      }
+
+      setStatus("success");
+      form.reset();
+    } catch (error) {
+      console.error(error);
+      setStatus("error");
+    }
   }
 
   return (
@@ -82,12 +113,16 @@ export function Contact() {
           <div className="flex items-center justify-between gap-3 pt-1">
             <button
               type="submit"
-              className="inline-flex items-center justify-center rounded-full bg-accent px-4 py-2 text-xs font-semibold text-slate-950 shadow-soft transition hover:-translate-y-0.5 hover:shadow-soft focus-visible:ring-focus-visible"
+              disabled={status === "loading"}
+              className="inline-flex items-center justify-center rounded-full bg-accent px-4 py-2 text-xs font-semibold text-slate-950 shadow-soft transition hover:-translate-y-0.5 hover:shadow-soft focus-visible:ring-focus-visible disabled:cursor-not-allowed disabled:opacity-80"
             >
-              Send Message
+              {status === "loading" ? "Sending..." : "Send Message"}
             </button>
             {status === "success" && (
-              <p className="text-xs text-muted-foreground">Thank you — message recorded locally.</p>
+              <p className="text-xs text-muted-foreground">Thank you — your message has been sent.</p>
+            )}
+            {status === "error" && (
+              <p className="text-xs text-red-500">Something went wrong. Please try again or email me directly.</p>
             )}
           </div>
         </motion.form>

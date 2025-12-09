@@ -15,7 +15,7 @@ export function Header() {
     { href: "/#education", label: "Education" },
     { href: "/#certifications", label: "Certs" },
     { href: "/#contact", label: "Contact" },
-    { href: "/blogs", label: "Blog" },
+    { href: "/blogs", label: "Blogs" },
   ];
 
   return (
@@ -80,6 +80,14 @@ export function Header() {
           >
             Let&apos;s Connect
           </motion.a>
+
+          <Link
+            href="/blogs"
+            className="inline-flex items-center rounded-full border border-border-subtle bg-surface/80 px-3 py-1 text-[11px] font-medium text-foreground shadow-subtle transition hover:-translate-y-0.5 hover:shadow-soft focus-visible:ring-focus-visible sm:hidden"
+          >
+            Blogs
+          </Link>
+
           <ThemeToggle currentTheme={theme} />
         </div>
       </div>
