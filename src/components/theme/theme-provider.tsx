@@ -28,14 +28,13 @@ export function useTheme(): ThemeContextValue {
 }
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>("light");
+  const [theme, setThemeState] = useState<Theme>("dark");
 
   useEffect(() => {
     if (typeof window === "undefined") return;
 
     const stored = window.localStorage.getItem(STORAGE_KEY) as Theme | null;
-    const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const initialTheme = stored ?? (systemPrefersDark ? "dark" : "light");
+    const initialTheme = stored ?? "dark";
 
     setThemeState(initialTheme);
     document.documentElement.classList.toggle("dark", initialTheme === "dark");
