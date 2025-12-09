@@ -2,11 +2,13 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 import { useTheme } from "@/components/theme/theme-provider";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
 
 export function Header() {
   const { theme } = useTheme();
+  const pathname = usePathname();
 
   const navItems = [
     { href: "/#about", label: "About" },
@@ -74,7 +76,7 @@ export function Header() {
 
         <div className="flex items-center gap-3">
           <motion.a
-            href="#contact"
+            href={pathname === "/blogs" ? "/#contact" : "#contact"}
             whileHover={{ y: -1, boxShadow: "var(--shadow-soft)" }}
             className="hidden rounded-full border border-border-subtle bg-surface/80 px-4 py-1.5 text-xs font-medium text-foreground shadow-subtle transition focus-visible:ring-focus-visible sm:inline-flex"
           >

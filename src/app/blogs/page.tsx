@@ -40,7 +40,10 @@ const posts: BlogPost[] = [
 
 export default function BlogsPage() {
   return (
-    <section className="section-scroll-mt space-y-5 rounded-[var(--radius-xl)] bg-surface/95 p-6 shadow-subtle ring-1 ring-border-subtle/70 sm:p-8 lg:p-10">
+    <section
+      id="blogs"
+      className="section-scroll-mt space-y-5 rounded-[var(--radius-xl)] bg-surface/95 p-6 shadow-subtle ring-1 ring-border-subtle/70 sm:p-8 lg:p-10"
+    >
       <div className="space-y-2">
         <h1 className="text-sm font-semibold uppercase tracking-[0.22em] text-muted-foreground">
           Blogs

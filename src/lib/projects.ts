@@ -44,6 +44,7 @@ export const projects: Project[] = [
       "Implemented a focused UX that keeps user data on screen and easy to compare.",
       "Added basic analytics to understand how users iterate on their resumes.",
     ],
+    live: "https://dev-vishwajeet-jadhav.github.io/resume-optimizer/",
   },
   {
     slug: "admission-iq",

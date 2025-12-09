@@ -1,8 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 export function Footer() {
+  const pathname = usePathname();
+
   return (
     <motion.footer
       initial={{ opacity: 0, y: 8 }}
@@ -17,7 +20,7 @@ export function Footer() {
         </p>
         <div className="flex items-center gap-4">
           <motion.a
-            href="#hero"
+            href={pathname === "/blogs" ? "#blogs" : "#hero"}
             whileHover={{ y: -1, opacity: 1 }}
             className="rounded-full px-1 hover:text-foreground focus-visible:ring-focus-visible"
           >
