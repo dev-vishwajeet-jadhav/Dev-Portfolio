@@ -16,7 +16,7 @@ export const projects: Project[] = [
     slug: "employee-management-system",
     title: "Employee Management System",
     role: "Frontend Engineer",
-    period: "2023",
+    period: "2025",
     summary:
       "Web-based platform to create, update, and track employee records with a clean, responsive UI.",
     description:
@@ -33,7 +33,7 @@ export const projects: Project[] = [
     slug: "resume-optimizer",
     title: "Resume Optimizer (AI-Assisted)",
     role: "Full-Stack Developer",
-    period: "2024",
+    period: "2025",
     summary:
       "Tool that uses an OpenAI-powered backend to analyze and optimize resumes against job descriptions.",
     description:
@@ -47,26 +47,10 @@ export const projects: Project[] = [
     live: "https://dev-vishwajeet-jadhav.github.io/resume-optimizer/",
   },
   {
-    slug: "admission-iq",
-    title: "Admission IQ – AI-ML College Recommendation",
-    role: "Full-Stack Developer",
-    period: "2023",
-    summary:
-      "AI-ML powered platform that recommends colleges based on student preferences and academic profile.",
-    description:
-      "Built an AI-ML powered web application that helps students discover suitable colleges using their academic scores, preferences, and constraints. Combined classic ML models with a simple, guided UI to make research less overwhelming.",
-    tech: ["Django", "Python", "JavaScript", "HTML5", "CSS3", "ML (KNN, Decision Trees, Regression)"],
-    highlights: [
-      "Integrated hybrid ML models (KNN, decision trees, linear regression) to improve recommendation accuracy.",
-      "Used by 200+ students and recognised in academic tech fests for practical impact.",
-      "Designed forms and result views that surface key trade-offs clearly.",
-    ],
-  },
-  {
     slug: "skillsync-mentorship-platform",
     title: "SkillSync – Learning & Mentorship Platform",
     role: "MERN Stack Developer",
-    period: "2023",
+    period: "2025",
     summary:
       "Peer-to-peer mentorship platform that connects learners and mentors for 1:1 sessions.",
     description:
@@ -79,10 +63,26 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "admission-iq",
+    title: "Admission IQ – AI-ML College Recommendation",
+    role: "Full-Stack Developer",
+    period: "2024",
+    summary:
+      "AI-ML powered platform that recommends colleges based on student preferences and academic profile.",
+    description:
+      "Built an AI-ML powered web application that helps students discover suitable colleges using their academic scores, preferences, and constraints. Combined classic ML models with a simple, guided UI to make research less overwhelming.",
+    tech: ["Django", "Python", "JavaScript", "HTML5", "CSS3", "ML (KNN, Decision Trees, Regression)"],
+    highlights: [
+      "Integrated hybrid ML models (KNN, decision trees, linear regression) to improve recommendation accuracy.",
+      "Used by 200+ students and recognised in academic tech fests for practical impact.",
+      "Designed forms and result views that surface key trade-offs clearly.",
+    ],
+  },
+  {
     slug: "ecommerce-application",
     title: "E-Commerce Application",
     role: "Full-Stack Developer",
-    period: "2022",
+    period: "2024",
     summary:
       "E-commerce web application with product catalogue, cart, search, and order simulation.",
     description:
@@ -98,7 +98,7 @@ export const projects: Project[] = [
     slug: "applicant-tracking-system",
     title: "Applicant Tracking System (ATS)",
     role: "Frontend Engineer",
-    period: "2022",
+    period: "2023",
     summary:
       "Candidate management interface that streamlines profile review and workflow for recruiters.",
     description:
